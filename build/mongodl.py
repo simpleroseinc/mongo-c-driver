@@ -117,6 +117,8 @@ def _infer_target_os_rel():
             ver_id = mapped_version
         os_id = mapped_id
     os_id = os_id.lower()
+    if os_id == 'pop':
+        os_id = 'ubuntu'
     if os_id not in DISTRO_ID_TO_TARGET:
         raise RuntimeError("We don't know how to map '{}' to a distribution "
                            "download target. Please contribute!".format(os_id))
